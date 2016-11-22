@@ -1,7 +1,14 @@
 package br.com.cloud.netflix.exemplo.loja.domain;
 
-public class Loja {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Loja implements Serializable {
+
+	@Id
 	private String id;
 	private String name;
 

@@ -22,7 +22,7 @@ public class CarrosBean {
 		return carrosClient.getCarros(id);
 	}
 
-	public List<Carro> cacheCarro(String id) {
+	public List<Carro> cacheCarros(String id) {
 		return Arrays.asList(new Carro("Fiat", "Palio", Arrays.asList("123", "456", "789")));
 	}
 }

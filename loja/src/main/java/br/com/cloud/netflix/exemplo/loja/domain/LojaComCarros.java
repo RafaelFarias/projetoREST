@@ -4,18 +4,18 @@ import java.util.List;
 
 public class LojaComCarros extends Loja {
 
-	private List<Carro> clientes;
+	private List<Carro> carros;
 
-	public LojaComCarros(Loja loja, List<Carro> clientes) {
+	public LojaComCarros(Loja loja, List<Carro> carros) {
 		super(loja.getId(), loja.getName());
-		this.clientes = clientes;
+		this.carros = carros;
 	}
 
-	public List<Carro> getClientes() {
-		return clientes;
+	public List<Carro> getCarros() {
+		return carros;
 	}
 
-	public void setClientes(List<Carro> clientes) {
-		this.clientes = clientes;
+	public void setCarros(List<Carro> carros) {
+		this.carros = carros;
 	}
 }

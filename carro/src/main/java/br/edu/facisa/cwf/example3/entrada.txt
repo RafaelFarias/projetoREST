@@ -1,5 +1,8 @@
   {
-    "id":5,
-    "marca":"Fake",
-    "modelo":"Fusca" 
+    "id":1,
+    "marca":"Volkswagen",
+    "modelo":"Fusca",
+     "lojas": [
+          "1"
+      ] 
   }

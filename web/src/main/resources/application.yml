@@ -7,4 +7,4 @@ eureka:
 zuul:
   routes:
     lojas: /lojas/**
-    clientes: /clientes/**
+    carros: /carros/**

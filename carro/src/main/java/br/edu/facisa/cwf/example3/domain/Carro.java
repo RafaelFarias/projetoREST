@@ -1,7 +1,10 @@
 package br.edu.facisa.cwf.example3.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -15,14 +18,19 @@ public class Carro implements Serializable {
 	private String marca;
 	private String modelo;
 	
+	@Column
+    @ElementCollection(targetClass=String.class)
+	private List<String> lojas;
+	
 	public Carro() {
 	}
 
 
-	public Carro(String id, String marca, String modelo) {
+	public Carro(String id, String marca, String modelo, List<String> lojas) {
 		this.id = id;
 		this.marca = marca;
 		this.modelo = modelo;
+		this.lojas = lojas;
 	}
 
 
@@ -53,6 +61,16 @@ public class Carro implements Serializable {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
+	}
+
+
+	public List<String> getLojas() {
+		return lojas;
+	}
+
+
+	public void setLojas(List<String> lojas) {
+		this.lojas = lojas;
 	}
 
 

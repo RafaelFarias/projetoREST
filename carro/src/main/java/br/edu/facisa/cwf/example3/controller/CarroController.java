@@ -1,5 +1,6 @@
 package br.edu.facisa.cwf.example3.controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,22 @@ public class CarroController {
 		return carro == null ? 
 				new ResponseEntity<Carro>(HttpStatus.NOT_FOUND) : 
 					new ResponseEntity<Carro>(carro, HttpStatus.OK);
+	}
+	
+	@RequestMapping("/lojas/{id}")
+	public ResponseEntity< List<Carro> > getCarros(@PathVariable String id) {
+		List<Carro> carrosFiltrados = new LinkedList<Carro>();
+
+		List<Carro> carros = carroService.listAllCarros();
+		
+		for (Carro carro : carros) {
+			if (carro.getLojas().contains(id)) {
+				carrosFiltrados.add(carro);
+			}
+		}
+
+		return new ResponseEntity< List<Carro> >
+		(carrosFiltrados, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/carro", method = RequestMethod.POST)

@@ -6,6 +6,6 @@ angular.module('microservices')
 		}).then(function(response) {
 			$scope.lojas = response.data;
 		}, function(response) {
-			console.error('Erro requisitando lojas');
+			console.error('Erro requisitando lojas')
 		});
 	});

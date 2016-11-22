@@ -3,9 +3,9 @@ angular.module('microservices', ['ngRoute'])
 		$routeProvider.when('/lojas', {
 			templateUrl : 'views/main.html',
 			controller : 'MainCtrl'
-		}).when('/lojas/:id/clientes', {
-			templateUrl : 'views/clientes.html',
-			controller : 'ClientesCtrl'
+		}).when('/lojas/:id/carros', {
+			templateUrl : 'views/carros.html',
+			controller : 'CarrosCtrl'
 		}).otherwise({
 			redirectTo : '/lojas'
 		});

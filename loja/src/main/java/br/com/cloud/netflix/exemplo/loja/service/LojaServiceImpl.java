@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import br.com.cloud.netflix.exemplo.loja.domain.Loja;
+import br.com.cloud.netflix.exemplo.loja.domain.LojaComCarros;
 import br.com.cloud.netflix.exemplo.loja.repository.LojaRepository;
 
 @Service
@@ -52,4 +53,5 @@ public class LojaServiceImpl implements LojaService {
 	public LojaRepository getRepository() {
 		return repository;
 	}
+
 }
