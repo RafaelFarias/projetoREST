@@ -1,0 +1,11 @@
+<h3>Lojas e Carros</h3>
+<ul>
+    <li ng-repeat="loja in lojas">
+		{{loja.name}}
+		<ul>
+			<li ng-repeat="carro in loja.carros">
+				{{carro.modelo}}
+			</li>
+		</ul>
+	</li>
+</ul>

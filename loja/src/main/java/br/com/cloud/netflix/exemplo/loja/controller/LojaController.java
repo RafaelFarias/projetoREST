@@ -34,18 +34,38 @@ public class LojaController {
 	}
 	
 	@RequestMapping("/")
-	public ResponseEntity<List<Loja>> getLojas() {
-		return new ResponseEntity< List<Loja> >
-		(lojaService.listAllLojas(), HttpStatus.OK);
+	public ResponseEntity<List<LojaComCarros>> getLojas() {
+		List<LojaComCarros> returnLojas = new ArrayList<LojaComCarros>();
+
+		lojas = lojaService.listAllLojas();
+		
+		for (Loja loja : lojas) {
+			returnLojas.add(new LojaComCarros(loja, carrosBean.getCarros(loja.getId())));
+		}
+
+		return new ResponseEntity<List<LojaComCarros>>(returnLojas, HttpStatus.OK);
 	}
 	
 	@RequestMapping("/lojas")
-	public ResponseEntity<List<Loja>> getAllLojas() {
+	public ResponseEntity<List<LojaComCarros>> getAllLojas() {
 		return getLojas();
 	}
 
 	@RequestMapping("/carros")
 	public ResponseEntity<List<LojaComCarros>> getLojasComCarros() {
+		List<LojaComCarros> returnLojas = new ArrayList<LojaComCarros>();
+
+		lojas = lojaService.listAllLojas();
+		
+		for (Loja loja : lojas) {
+			returnLojas.add(new LojaComCarros(loja, carrosBean.getCarros(loja.getId())));
+		}
+
+		return new ResponseEntity<List<LojaComCarros>>(returnLojas, HttpStatus.OK);
+	}
+	
+	@RequestMapping("/lojasComCarros")
+	public ResponseEntity<List<LojaComCarros>> getMergeLojasComCarros() {
 		List<LojaComCarros> returnLojas = new ArrayList<LojaComCarros>();
 
 		lojas = lojaService.listAllLojas();
